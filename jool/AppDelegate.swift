@@ -40,11 +40,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func openWindow(sender: AnyObject) {
-        let windowController = WindowController(windowNibName: "WindowController")
-        windowController.showWindow(self)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(closeWindow), name: NSWindowWillCloseNotification, object: windowController.window)
-        
-        windowControllers["\(unsafeAddressOf(windowController))"] = windowController
+        if let windowController = NSStoryboard(name: "Window", bundle: NSBundle.mainBundle()).instantiateControllerWithIdentifier("WindowController") as? WindowController {
+            windowController.showWindow(self)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(closeWindow), name: NSWindowWillCloseNotification, object: windowController.window)
+            
+            windowControllers["\(unsafeAddressOf(windowController))"] = windowController
+        }
     }
     
     func closeWindow(sender: AnyObject) {

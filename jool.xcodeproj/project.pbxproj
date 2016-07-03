@@ -13,7 +13,10 @@
 		BC2FD93D1D28844700443279 /* joolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FD93C1D28844700443279 /* joolTests.swift */; };
 		BC2FD9481D28844700443279 /* joolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FD9471D28844700443279 /* joolUITests.swift */; };
 		BC2FD9571D2889FD00443279 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FD9551D2889FD00443279 /* WindowController.swift */; };
-		BC2FD9581D2889FD00443279 /* WindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2FD9561D2889FD00443279 /* WindowController.xib */; };
+		BC2FD95F1D28981000443279 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FD95D1D28981000443279 /* ViewController.swift */; };
+		BC2FD9621D289A6500443279 /* Window.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC2FD9611D289A6500443279 /* Window.storyboard */; };
+		BCE7DFFE1D28F277007D4A6A /* FileSystemItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7DFFD1D28F277007D4A6A /* FileSystemItem.swift */; };
+		BCE7E0001D28F294007D4A6A /* JsonDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7DFFF1D28F294007D4A6A /* JsonDataItem.swift */; };
 		F11C70417673FEE45BA46DF3 /* Pods_jool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B30CF992DFC4CD183ED94C /* Pods_jool.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +52,10 @@
 		BC2FD9471D28844700443279 /* joolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joolUITests.swift; sourceTree = "<group>"; };
 		BC2FD9491D28844700443279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC2FD9551D2889FD00443279 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		BC2FD9561D2889FD00443279 /* WindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WindowController.xib; sourceTree = "<group>"; };
+		BC2FD95D1D28981000443279 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC2FD9611D289A6500443279 /* Window.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Window.storyboard; sourceTree = "<group>"; };
+		BCE7DFFD1D28F277007D4A6A /* FileSystemItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemItem.swift; sourceTree = "<group>"; };
+		BCE7DFFF1D28F294007D4A6A /* JsonDataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDataItem.swift; sourceTree = "<group>"; };
 		E19632585435CDA560B9FA4F /* Pods-jool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jool.release.xcconfig"; path = "Pods/Target Support Files/Pods-jool/Pods-jool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +132,10 @@
 				BC2FD9301D28844700443279 /* Main.storyboard */,
 				BC2FD9331D28844700443279 /* Info.plist */,
 				BC2FD9551D2889FD00443279 /* WindowController.swift */,
-				BC2FD9561D2889FD00443279 /* WindowController.xib */,
+				BC2FD9611D289A6500443279 /* Window.storyboard */,
+				BC2FD95D1D28981000443279 /* ViewController.swift */,
+				BCE7DFFD1D28F277007D4A6A /* FileSystemItem.swift */,
+				BCE7DFFF1D28F294007D4A6A /* JsonDataItem.swift */,
 			);
 			path = jool;
 			sourceTree = "<group>";
@@ -257,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC2FD92F1D28844700443279 /* Assets.xcassets in Resources */,
-				BC2FD9581D2889FD00443279 /* WindowController.xib in Resources */,
+				BC2FD9621D289A6500443279 /* Window.storyboard in Resources */,
 				BC2FD9321D28844700443279 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,8 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE7E0001D28F294007D4A6A /* JsonDataItem.swift in Sources */,
+				BC2FD95F1D28981000443279 /* ViewController.swift in Sources */,
 				BC2FD92B1D28844700443279 /* AppDelegate.swift in Sources */,
 				BC2FD9571D2889FD00443279 /* WindowController.swift in Sources */,
+				BCE7DFFE1D28F277007D4A6A /* FileSystemItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
