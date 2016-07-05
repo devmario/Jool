@@ -24,7 +24,7 @@
                 </windowController>
                 <customObject id="ahP-lp-1jE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="476"/>
+            <point key="canvasLocation" x="565" y="244"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="93L-hz-gqM">
@@ -34,8 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="873" height="671"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <popUpButton verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dw4-2i-JxL">
-                                <rect key="frame" x="18" y="626" width="77" height="26"/>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dw4-2i-JxL">
+                                <rect key="frame" x="18" y="627" width="101" height="26"/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="gCE-cU-y5t">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -85,16 +85,16 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
-                            <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Diu-RY-aV8">
-                                <rect key="frame" x="129" y="629" width="600" height="22"/>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Diu-RY-aV8">
+                                <rect key="frame" x="135" y="629" width="620" height="22"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Insert URL to want you see response." bezelStyle="round" id="jIy-ee-gXL">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzE-cr-bGl">
-                                <rect key="frame" x="749" y="616" width="93" height="32"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zzE-cr-bGl">
+                                <rect key="frame" x="769" y="623" width="90" height="32"/>
                                 <buttonCell key="cell" type="push" title="Request" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V65-rO-kc3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -103,10 +103,10 @@
                                     <action selector="request:" target="8Vv-sC-WpH" id="e2l-EM-elV"/>
                                 </connections>
                             </button>
-                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIR-lQ-Xfw">
-                                <rect key="frame" x="188" y="369" width="442" height="135"/>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIR-lQ-Xfw">
+                                <rect key="frame" x="0.0" y="0.0" width="873" height="609"/>
                                 <clipView key="contentView" drawsBackground="NO" id="51Z-Iu-HLX">
-                                    <rect key="frame" x="1" y="0.0" width="440" height="134"/>
+                                    <rect key="frame" x="1" y="0.0" width="871" height="608"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="uaF-6e-wJm" viewBased="YES" indentationPerLevel="16" outlineTableColumn="tsI-Xg-Vh7" id="x97-HF-Nbi">
@@ -143,7 +143,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="" width="202" minWidth="10" maxWidth="3.4028234663852886e+38" id="T9Y-Ha-noh">
+                                                <tableColumn identifier="" width="633" minWidth="10" maxWidth="3.4028234663852886e+38" id="T9Y-Ha-noh">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="value">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
