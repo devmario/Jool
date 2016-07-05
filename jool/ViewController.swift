@@ -9,14 +9,59 @@
 import Cocoa
 import SwiftColors
 import SwiftyJSON
+import Alamofire
 
 class ViewController: NSViewController {
-    var jsonDataItem:JsonDataItem = JsonDataItem(key: nil, json:JSON.parse("{\"a\":\"b\",\"c\":[1,2,3.02],\"d\":\"e\",\"f\":true,\"g\":null}"))
+    @IBOutlet var responseView:NSOutlineView?
+    @IBOutlet var urlField:NSTextField?
+    @IBOutlet var methodPopup:NSPopUpButton?
+    @IBOutlet var requestButton:NSButton?
+    
+    var method:String = Method.GET.rawValue
+    
+    var jsonDataItem:JsonDataItem = JsonDataItem(key: nil, json:JSON.parse(""))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
+    }
+    
+    func responseData(data:NSData?) -> (success:Bool, error:NSError?, json:JSON) {
+        if data == nil {
+            return (false, nil, JSON.null)
+        }
+        let body = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        if body == nil {
+            return (false, nil, JSON.null)
+        } else if body!.isEqualToString("") {
+            return (false, nil, JSON.null)
+        }
+        let json = JSON.parse(body as! String)
+        
+        if json.error != nil {
+            return (false, json.error, JSON.null)
+        }
+        return (true, nil, json)
+    }
+    
+    @IBAction func changeMethod(sender:AnyObject) {
+        if let menu = sender as? NSMenuItem {
+            method = menu.title
+        }
+    }
+    
+    @IBAction func request(sender:AnyObject) {
+        self.requestButton?.enabled = false
+        guard let url = urlField?.stringValue else { return }
+        guard let method = Method(rawValue:method) else { return }
+        Alamofire.request(method, url, parameters: [:]).response { request, response, data, error in
+            let response = self.responseData(data)
+            self.jsonDataItem = JsonDataItem(key: nil, json:response.json)
+            
+            self.responseView?.reloadData()
+            self.requestButton?.enabled = true
+        }
     }
     
 }

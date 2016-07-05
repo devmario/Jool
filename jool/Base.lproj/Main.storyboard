@@ -61,7 +61,7 @@
                                     <items>
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="openWindow:" target="Voe-Tx-rLC" id="8H3-fw-g1U"/>
+                                                <action selector="openWindow:" target="Voe-Tx-rLC" id="k05-am-MS3"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">

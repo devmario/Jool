@@ -10,6 +10,8 @@ import Cocoa
 import SwiftColors
 
 class WindowController: NSWindowController {
+    static let minimumWidth: CGFloat = 500
+    static let minimumHeight: CGFloat = 700
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -20,5 +22,18 @@ class WindowController: NSWindowController {
     
     deinit {
         print("\(#function) \(self)", terminator:"\n\n")
+    }
+}
+
+extension WindowController: NSWindowDelegate {
+    func windowWillResize(sender: NSWindow, toSize frameSize: NSSize) -> NSSize {
+        var frameSize = frameSize
+        if frameSize.width < WindowController.minimumWidth {
+            frameSize.width = WindowController.minimumWidth
+        }
+        if frameSize.height < WindowController.minimumHeight {
+            frameSize.height = WindowController.minimumHeight
+        }
+        return frameSize
     }
 }

@@ -12,44 +12,47 @@ import SwiftyJSON
 public class JsonDataItem: NSObject {
     
     var key: String?
-    var json: JSON
+    var json: JSON?
     
     lazy var type: String = {
-        switch self.json.type {
-        case .Number:
-            return "Number"
-        case .String:
-            return "String"
-        case .Bool:
-            return "Bool"
-        case .Array:
-            return "Array"
-        case .Dictionary:
-            return "Dictionary"
-        case .Null:
-            return "Null"
-        case .Unknown:
-            return "Unknown"
+        if let type = self.json?.type {
+            switch type {
+            case .Number:
+                return "Number"
+            case .String:
+                return "String"
+            case .Bool:
+                return "Bool"
+            case .Array:
+                return "Array"
+            case .Dictionary:
+                return "Dictionary"
+            case .Null:
+                return "Null"
+            case .Unknown:
+                return "Unknown"
+            }
         }
+        return "Unknown"
     } ()
     
     lazy var text: String? = {
-        if let array = self.json.array {
+        if let array = self.json?.array {
             return "(\(array.count) items)"
         }
-        if let dictionary = self.json.dictionary {
+        if let dictionary = self.json?.dictionary {
             return "(\(dictionary.count) items)"
         }
-        return self.json.description
+        return self.json?.description
     } ()
     
     lazy var children: [JsonDataItem]? = {
         var newChildren: [JsonDataItem] = []
-        if let dict = self.json.dictionary {
+        if let dict = self.json?.dictionary {
             for (key, json) in dict {
                 newChildren.append(JsonDataItem(key:key, json:json))
             }
-        } else if let array = self.json.array {
+        } else if let array = self.json?.array {
             for json in array {
                 newChildren.append(JsonDataItem(key:nil, json:json))
             }
@@ -57,7 +60,7 @@ public class JsonDataItem: NSObject {
         return  newChildren
     } ()
     
-    init(key:String?, json:JSON) {
+    init(key:String?, json:JSON?) {
         self.key = key
         self.json = json
     }
